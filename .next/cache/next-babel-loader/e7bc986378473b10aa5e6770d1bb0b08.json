@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var UPDATE_NUMBER_OF_TEAMS = \"UPDATE_NUMBER_OF_TEAMS\"; //Action Creator\n\nexport var updateNumberOfTeams = function updateNumberOfTeams(payload) {\n  return {\n    type: UPDATE_NUMBER_OF_TEAMS,\n    payload: payload\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

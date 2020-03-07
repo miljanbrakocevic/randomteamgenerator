@@ -1,0 +1,47 @@
+{
+  "devFiles": [],
+  "pages": {
+    "/": [
+      "static/runtime/webpack-4b444dab214c6491079c.js",
+      "static/chunks/framework.5fcc7199ef0beb206d2f.js",
+      "static/chunks/commons.e784175d2a6c2ca08c23.js",
+      "static/chunks/975a8b7f202a0d21809a05567825587ed0833a68.1771044883e83b24eeaa.js",
+      "static/chunks/6d8204e2398edc962f3e7a36009b0457ce184afb.8351d70bcdd306c12a47.js",
+      "static/runtime/main-acadb0d0f30057f3c691.js"
+    ],
+    "/_app": [
+      "static/runtime/webpack-4b444dab214c6491079c.js",
+      "static/chunks/framework.5fcc7199ef0beb206d2f.js",
+      "static/chunks/commons.e784175d2a6c2ca08c23.js",
+      "static/chunks/975a8b7f202a0d21809a05567825587ed0833a68.1771044883e83b24eeaa.js",
+      "static/css/styles.b379959f.chunk.css",
+      "static/chunks/styles.7a66fdd3742ea8338fd5.js",
+      "static/runtime/main-acadb0d0f30057f3c691.js",
+      "static/EBVFSqkI6WVUK3u4yoR3Y/_buildManifest.js"
+    ],
+    "/_error": [
+      "static/runtime/webpack-4b444dab214c6491079c.js",
+      "static/chunks/framework.5fcc7199ef0beb206d2f.js",
+      "static/chunks/commons.e784175d2a6c2ca08c23.js",
+      "static/runtime/main-acadb0d0f30057f3c691.js"
+    ],
+    "/_polyfills": [
+      "static/runtime/polyfills-0638c93e5165546c7715.js"
+    ],
+    "/about": [
+      "static/runtime/webpack-4b444dab214c6491079c.js",
+      "static/chunks/framework.5fcc7199ef0beb206d2f.js",
+      "static/chunks/commons.e784175d2a6c2ca08c23.js",
+      "static/chunks/6d8204e2398edc962f3e7a36009b0457ce184afb.8351d70bcdd306c12a47.js",
+      "static/runtime/main-acadb0d0f30057f3c691.js"
+    ],
+    "/index": [
+      "static/runtime/webpack-4b444dab214c6491079c.js",
+      "static/chunks/framework.5fcc7199ef0beb206d2f.js",
+      "static/chunks/commons.e784175d2a6c2ca08c23.js",
+      "static/chunks/975a8b7f202a0d21809a05567825587ed0833a68.1771044883e83b24eeaa.js",
+      "static/chunks/6d8204e2398edc962f3e7a36009b0457ce184afb.8351d70bcdd306c12a47.js",
+      "static/runtime/main-acadb0d0f30057f3c691.js"
+    ]
+  }
+}

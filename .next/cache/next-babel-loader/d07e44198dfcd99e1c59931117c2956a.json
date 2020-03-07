@@ -1,0 +1,1 @@
+{"ast":null,"code":"import playerReducer from './playerReducer';\nimport teamsReducer from './teamsReducer';\nimport { combineReducers } from 'redux';\nvar rootReducer = combineReducers({\n  player: playerReducer,\n  teams: teamsReducer\n});\nexport default rootReducer;","map":null,"metadata":{},"sourceType":"module"}
