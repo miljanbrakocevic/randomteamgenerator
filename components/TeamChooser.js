@@ -36,7 +36,7 @@ class TeamChooser extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="mh-100 overflow-x">
                 {this.props.selectedTeams.map( (team, teamIndex) =>
                     <div key={teamIndex}>
                         <h5>Team {teamIndex} </h5>

@@ -11,7 +11,7 @@ class PlayerList extends React.Component {
 
     render() {
         return (
-            <div class="d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
                 <div className="d-flex justify-content-center flex-column">
                     <div className="row">
                         <h1 className="display-6">

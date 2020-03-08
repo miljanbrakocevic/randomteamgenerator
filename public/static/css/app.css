@@ -10,6 +10,11 @@
 .modal-fullscreen {
     max-width: 90%;
 }
+
+.modal-body-container {
+    max-height: 370px;
+    overflow-y: scroll;
+}
 .football {
     width: 35px;
 }

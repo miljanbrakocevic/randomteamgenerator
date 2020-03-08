@@ -94,7 +94,7 @@ class TeamListModal extends React.Component {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div className="modal-body">
+                            <div className="modal-body modal-body-container">
                                 {
                                     this.state.contentErrors.length === 0 ?
                                         <TeamChooser/> :
@@ -102,7 +102,7 @@ class TeamListModal extends React.Component {
                                             <p className="mb-0">
                                                 {
                                                     this.state.contentErrors.map((error) =>
-                                                        <span>
+                                                        <span key={error}>
                                                             <span> {error}</span> <br/>
                                                         </span>
                                                     )

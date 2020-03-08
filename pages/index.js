@@ -11,8 +11,8 @@ const Index = () => (
     <Layout title="Generate random teams">
         <div>
             <div className="jumbotron">
-                <h2 className="display-3 text-center">Get your teams</h2>
-                <p className="lead">
+                <h2 className="display-4 text-center">Get your teams</h2>
+                <p className="lead text-center">
                     Get your randomly generated teams, just add players and choose number of teams that you expect :)
                 </p>
             </div>
