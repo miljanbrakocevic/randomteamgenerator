@@ -28,7 +28,7 @@ class AddPlayer extends React.Component {
                         <div className="input-group mb-3">
                             <input
                                 type="text"
-                                className="form-control"
+                                className="form-control text-center"
                                 aria-label="Amount (to the nearest dollar)"
                                 value={this.state.playersName}
                                 placeholder="Players name"
