@@ -31,6 +31,7 @@ class AddPlayer extends React.Component {
                                 className="form-control"
                                 aria-label="Amount (to the nearest dollar)"
                                 value={this.state.playersName}
+                                placeholder="Players name"
                                 onKeyPress={event =>
                                 {
                                     if (event.key === 'Enter') {
