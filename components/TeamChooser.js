@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { setSelectedTeams } from "../redux/actions/teamsActions";
+import React from "react";
 
 class TeamChooser extends React.Component {
     constructor(props) {
@@ -11,8 +12,8 @@ class TeamChooser extends React.Component {
     componentDidMount() {
         this.getTeams()
     }
-    getShuffledPlayers() {
-       const shuffledPlayers =  this.props.players
+    getShuffledPlayers(players) {
+       const shuffledPlayers =  players
         for (var i = shuffledPlayers.length - 1; i > 0; i--) {
             var rand = Math.floor(Math.random() * (i + 1));
             [shuffledPlayers[i], shuffledPlayers[rand]] = [shuffledPlayers[rand], shuffledPlayers[i]]
@@ -22,16 +23,40 @@ class TeamChooser extends React.Component {
     getTeams() {
      const selectedTeams = [] ;
      let teamNumber = 1;
-     this.getShuffledPlayers().forEach((player, index) => {
-        selectedTeams[teamNumber] = Array.isArray(selectedTeams[teamNumber]) ? selectedTeams[teamNumber] : []
-        selectedTeams[teamNumber].push(index)
-        if (teamNumber === this.props.numberOfTeams) {
-            teamNumber = 1;
-            return
-        }
-        teamNumber++
+     const allPlayers = this.props.players
+     let superStarPlayersIndexes = [];
+     let basicPlayersIndexes = [];
+
+        allPlayers.forEach((player, index) => {
+             if (player.isPlayerSuperStar) {
+                 superStarPlayersIndexes.push(index)
+             } else {
+                 basicPlayersIndexes.push(index)
+             }
+         })
+        const shuffledSuperStars = this.getShuffledPlayers(superStarPlayersIndexes)
+        shuffledSuperStars.forEach((superStarPlayersIndex) => {
+            this.addPlayerToTeam(selectedTeams, teamNumber, superStarPlayersIndex)
+            if (teamNumber === this.props.numberOfTeams) {
+                teamNumber = 1;
+                return
+            }
+            teamNumber++
+        })
+    const shuffledBasicPlayers = this.getShuffledPlayers(basicPlayersIndexes)
+        shuffledBasicPlayers.forEach((basicPlayersIndex) => {
+            this.addPlayerToTeam(selectedTeams, teamNumber, basicPlayersIndex)
+            if (teamNumber === this.props.numberOfTeams) {
+                teamNumber = 1;
+                return
+            }
+            teamNumber++
     })
         this.props.setSelectedTeams(selectedTeams)
+    }
+    addPlayerToTeam(selectedTeams, teamNumber, playersIndex) {
+        selectedTeams[teamNumber] = Array.isArray(selectedTeams[teamNumber]) ? selectedTeams[teamNumber] : []
+        selectedTeams[teamNumber].push(playersIndex)
     }
 
     render() {
@@ -44,12 +69,17 @@ class TeamChooser extends React.Component {
                             <thead>
                                 <tr>
                                     <th scope="col"> Player name:</th>
+                                    <th scope="col"> Superstar status:</th>
                                 </tr>
                             </thead>
                             <tbody>
                             { team.map(playersIndex =>
-                                <tr className="table-active" key={playersIndex}>
-                                    <td>{this.props.players[playersIndex]}</td>
+                                <tr className="table-light table-row" key={playersIndex}>
+                                    <td>{this.props.players[playersIndex].playersName}</td>
+                                    <td>{this.props.players[playersIndex].isPlayerSuperStar ?
+                                        <i className="icon icon-star icon-superstar-small pl-5"> </i> :
+                                        <span className="pl-5"> - </span> }
+                                    </td>
                                 </tr>
                             )}
                             </tbody>

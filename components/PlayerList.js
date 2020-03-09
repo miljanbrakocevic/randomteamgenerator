@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { removePlayer } from "../redux/actions/playerActions";
+import React from "react";
 
 class PlayerList extends React.Component {
     constructor(props) {
@@ -23,14 +24,18 @@ class PlayerList extends React.Component {
                             {
                                 this.props.players.map((player, index) =>
                                     <a key={index} className="list-group-item list-group-item-action player-item">
-                                        {player}
-                                        <button
-                                            onClick={() => this.props.removePlayer(index)}
-                                            type="button" className="close"
-                                            aria-label="Close"
-                                        >
-                                            <span className="text-danger" aria-hidden="true">&times;</span>
-                                        </button>
+                                        <div>
+                                            {player.isPlayerSuperStar ?
+                                                <i className="icon icon-star icon-superstar-small"> </i> : ''}
+                                            {player.playersName}
+                                            <button
+                                                onClick={() => this.props.removePlayer(index)}
+                                                type="button" className="close"
+                                                aria-label="Close"
+                                            >
+                                                <span className="text-danger" aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
                                     </a>
                                 )
                             }

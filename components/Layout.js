@@ -9,6 +9,11 @@ const Layout = (props) => (
             <link
                 rel="stylesheet"
                 href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
+            <link
+                rel="stylesheet"
+                href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
+            <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+
         </Head>
         <Navbar/>
         <div className="container">

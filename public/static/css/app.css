@@ -13,7 +13,7 @@
 
 .modal-body-container {
     max-height: 370px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .football {
     width: 35px;
@@ -24,4 +24,24 @@
 }
 .donate {
     margin-top: 80px;
+}
+
+.superstar-container {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+.icon-superstar {
+    color: #ffc107;
+    font-size: 30px;
+}
+.icon-superstar-small {
+    color: #ffc107;
+    font-size: 20px;
+}
+.table-row {
+    background-color: #bfbfbf
+}
+.popover-stick-to-top {
+    top: -125px;
 }

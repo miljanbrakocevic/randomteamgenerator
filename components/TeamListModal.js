@@ -60,7 +60,6 @@ class TeamListModal extends React.Component {
         }
         this.setState({ contentErrors})
     }
-
     render() {
         return (
             <div className="text-center label-distance">
@@ -81,10 +80,7 @@ class TeamListModal extends React.Component {
                     <div className="modal-dialog modal-fullscreen" role="document">
                         <div className="modal-content d-flex justify-content-center">
                             <div className="modal-header">
-                                <h5 className={`modal-title ${this.state.contentErrors === 0 ? 
-                                    'text-danger' : ''
-                                }`
-                                }> {
+                                <h5 className={`modal-title ${this.state.contentErrors.length !== 0 ? 'text-danger': ''}`}> {
                                     this.state.contentErrors.length === 0
                                     ? 'Your teams have been selected'
                                     : 'There are validation errors'

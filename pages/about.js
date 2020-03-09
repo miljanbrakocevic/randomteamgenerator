@@ -12,7 +12,7 @@ const About = () => (
                     </a>
 
                     <div className="donate">
-                        <h5> Support me to drink more beers after small football :) </h5>
+                        <h5> Support me to drink more beers after futsal :) </h5>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="business" value="tebrex93@gmail.com" />

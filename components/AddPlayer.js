@@ -7,7 +7,9 @@ class AddPlayer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playersName: ''
+            playersName: '',
+            isSuperStarSelected: false,
+            shouldDisplayPopover: false
         };
     }
     setPlayersName(value) {
@@ -16,9 +18,12 @@ class AddPlayer extends React.Component {
     addPlayer(playersName) {
         const playersNameRaw = playersName.trim()
         if (playersNameRaw) {
-            this.props.addPlayer(playersNameRaw)
-            this.setState({ playersName: ''})
+            this.props.addPlayer({ playersName: playersNameRaw, isPlayerSuperStar: this.state.isSuperStarSelected })
+            this.setState({ playersName: '', isSuperStarSelected: false })
         }
+    }
+    setSuperStarStatus = () => {
+        this.setState({ isSuperStarSelected: !this.state.isSuperStarSelected })
     }
     render() {
         return (
@@ -26,6 +31,21 @@ class AddPlayer extends React.Component {
                 <div className="row">
                     <div className="form-group">
                         <div className="input-group mb-3">
+                            <div className="superstar-container"
+                                 onMouseEnter={() => this.setState({ shouldDisplayPopover: true })}
+                                 onMouseLeave={() => this.setState({ shouldDisplayPopover: false })}
+                            >
+                                { this.state.shouldDisplayPopover ?
+                                    <div className={`popover fade bs-popover-top popover-stick-to-top ${this.state.shouldDisplayPopover ? 'show': 'hide'}`} role="tooltip">
+                                    <div className="arrow" />
+                                    <h3 className="popover-header">Set player as Superstar</h3>
+                                    <div className="popover-body">
+                                        Superstar players will be splitted into different teams to make equality of the teams
+                                    </div>
+                                </div> : ''}
+                                <i onClick={this.setSuperStarStatus} className={`icon ${this.state.isSuperStarSelected ? 'icon-star' : 'icon-star-empty'} 
+                                    icon-superstar`}></i>
+                            </div>
                             <input
                                 type="text"
                                 className="form-control text-center"
@@ -51,6 +71,7 @@ class AddPlayer extends React.Component {
                                 >
                                     Add player
                                 </button>
+
                             </div>
                         </div>
                         </div>
